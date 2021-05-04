@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class view extends JFrame {
 
@@ -29,5 +30,9 @@ public class view extends JFrame {
 
     public void updateClickValue(int i){
         plusClicks.setText("+" + i + " glizzys");
+    }
+
+    void addPlusClicksListener(ActionListener listenForLoadListener) {
+        this.plusClicks.addActionListener(listenForLoadListener);
     }
 }

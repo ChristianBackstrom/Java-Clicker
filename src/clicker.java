@@ -17,8 +17,8 @@ public class clicker {
         clicksPerSec += i;
     }
 
-    public void increaseClicks(int i){
-        clicks += i;
+    public void increaseClicks(){
+        clicks += clicksPerClick;
     }
 
     public void inreaseTenCPS(){
