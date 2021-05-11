@@ -6,18 +6,14 @@ public class view extends JFrame {
     private JButton plusClicks;
     private JPanel panel;
     private JTextField value;
+    private JButton shopButton;
+    private JTextField clicksPerSec;
 
     public view(){
-        panel = new JPanel();
-        value = new JTextField("0 glizzys", 40);
-        plusClicks = new JButton("+1 glizzys");
-
-        panel.add(value);
-        panel.add(plusClicks);
-
         this.add(panel);
 
         value.setEditable(false);
+        clicksPerSec.setEditable(false);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1000,800);
@@ -28,11 +24,19 @@ public class view extends JFrame {
         value.setText(i + " glizzys");
     }
 
+    public void updateClicksPerSec(int i){
+        clicksPerSec.setText(i + " glizzys/s");
+    }
+
     public void updateClickValue(int i){
         plusClicks.setText("+" + i + " glizzys");
     }
 
     void addPlusClicksListener(ActionListener listenForLoadListener) {
         this.plusClicks.addActionListener(listenForLoadListener);
+    }
+
+    void addClicksPerSecListener(ActionListener listenForLoadListener) {
+        this.shopButton.addActionListener(listenForLoadListener);
     }
 }

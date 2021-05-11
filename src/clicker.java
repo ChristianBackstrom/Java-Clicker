@@ -2,11 +2,13 @@ public class clicker {
     private int clicks;
     private int clicksPerSec;
     private int clicksPerClick;
+    private int priceRange;
 
     public clicker(){
         clicks = 0;
         clicksPerSec = 0;
         clicksPerClick = 1;
+        priceRange = 1;
     }
 
     public void increaseCPC(int i){
@@ -22,9 +24,15 @@ public class clicker {
     }
 
     public void inreaseTenCPS(){
-        if (clicks <= 1000){
+        if (clicks >= priceRange()){
+            clicks -= priceRange();
+            priceRange++;
             increaseCPS(10);
         }
+    }
+
+    public int priceRange(){
+        return priceRange*priceRange;
     }
 
     public int getClicks() {
