@@ -1,6 +1,6 @@
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
-import java.util.ArrayList;
+    
 
 public class dbModel {
 
@@ -9,11 +9,11 @@ public class dbModel {
         Statement stmt;
 
         conn = DriverManager.getConnection(
-                    "jdbc:mysql://" + databaseConfig.DBURL + ":" + databaseConfig.port + "/" + databaseConfig.DBname +
-                            "? allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
-                    databaseConfig.user, databaseConfig.password);
-            stmt = conn.createStatement();
+                "jdbc:mysql://" + databaseConfig.DBURL + ":" + databaseConfig.port + "/" + databaseConfig.DBname +
+                        "? allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+                databaseConfig.user, databaseConfig.password);
 
+        stmt = conn.createStatement();
 
         String save = "INSERT INTO score (name, score) VALUES ( '" + name + "','" + score + "')";
         stmt.executeUpdate(save);
