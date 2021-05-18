@@ -19,9 +19,10 @@ public class clicker {
         clicksPerSec += i;
     }
 
-    public void increaseClicks(){
-        clicks += clicksPerClick;
+    public void increaseClicks(int i){
+        clicks += i;
     }
+
 
     public void inreaseTenCPS(){
         if (clicks >= priceRange()){

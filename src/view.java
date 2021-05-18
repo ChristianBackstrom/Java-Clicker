@@ -11,6 +11,7 @@ public class view extends JFrame {
     private JTextField clicksPerSec;
     private JList users;
     private JButton topScores;
+    private JTextField priceRange;
     private DefaultListModel list;
 
     public view(){
@@ -37,6 +38,7 @@ public class view extends JFrame {
             value.setVisible(false);
             shopButton.setVisible(false);
             clicksPerSec.setVisible(false);
+            priceRange.setVisible(false);
             for (int i = 0; i < 10; i++){
                 list.addElement(user[i].getName() + "  " + user[i].getScore());
             }
@@ -47,17 +49,20 @@ public class view extends JFrame {
             value.setVisible(true);
             shopButton.setVisible(true);
             clicksPerSec.setVisible(true);
+            priceRange.setVisible(true);
             list.clear();
         }
 
     }
 
+
     public void updateClicks(int i){
         value.setText(i + " glizzys");
     }
 
-    public void updateClicksPerSec(int i){
+    public void updateClicksPerSec(int i, int price){
         clicksPerSec.setText(i + " glizzys/s");
+        priceRange.setText(price + ":-");
     }
 
     public void updateClickValue(int i){
